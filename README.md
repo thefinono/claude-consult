@@ -1,8 +1,8 @@
 # claude-consult
 
-**A skills toolkit for trusting AI-assisted work on consequential decisions.**
+**A skills toolkit for trusting AI-assisted non-technical work.**
 
-If you use Claude (or another AI) for analysis, planning, writing, or research — and you've been burned by surface-good-actually-wrong output before — this gives you a structured way to make AI-assisted work trustworthy enough to ship.
+If you use Claude (or another AI) for analysis, planning, writing, or research this gives you a structured way to make AI-assisted non-technical work more efficient and less prompt-heavy.
 
 It's a set of 13 skills for [Claude Code](https://claude.com/claude-code) (Anthropic's terminal-based Claude). No engineering background required to use them.
 
