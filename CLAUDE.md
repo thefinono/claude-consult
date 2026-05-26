@@ -8,6 +8,8 @@ If you want these skills available globally, see `setup.sh --global` — but it 
 
 ## Available skills
 
+### General methodology skills (in `skills/`)
+
 | Skill | What it does |
 |---|---|
 | `problem-solving` | Four-stage facilitation for a new project or scope change (Stages 1-4: define → disaggregate → prioritize → plan) |
@@ -23,6 +25,20 @@ If you want these skills available globally, see `setup.sh --global` — but it 
 | `project-hygiene` | Keep project folders clean and scalable |
 | `session-capture` | Capture session learnings into persistent memory |
 | `find-skills` | Help discover other skills from the open agent skills ecosystem |
+
+### Practice-specific skills (in `practices/<practice>/skills/`)
+
+Domain-specific skill bundles that apply the methodology to a functional area. Invoke them when the user is working in that domain.
+
+**`practices/marketing/seo-geo/`** — SEO and GEO (Generative Engine Optimization) for SMBs:
+
+| Skill | What it does |
+|---|---|
+| `smb-schema-fix` | Inspect JSON-LD on a site, diagnose what's wrong, output corrected JSON-LD ready to paste into CMS code injection |
+| `smb-seo-geo-audit` | Comprehensive site audit — technical SEO, GEO baseline, citations, measurement, GBP — with P0/P1/P2 prioritized findings |
+| `smb-measurement-setup` | Walk owner through GA4 + Search Console setup, sitemap submission, baseline metrics, monthly review prompt library |
+
+See `practices/marketing/seo-geo/README.md` and `practices/marketing/seo-geo/architecture.md` for the full practice.
 
 ---
 
@@ -56,6 +72,10 @@ If the session was purely exploratory (thinking, research, planning) with no del
 - **Project folder getting messy** → `project-hygiene`
 - **Mid-session natural breakpoint, valuable insights to preserve** → `session-capture`
 - **User wishes there were a skill for X** → `find-skills`
+
+### Working in a specific functional domain (SEO/GEO, future practices)
+
+If the user is working on SEO, GEO, or AI-engine visibility for a small business — check `practices/marketing/seo-geo/skills/` for domain-specific skills (`smb-schema-fix`, `smb-seo-geo-audit`, `smb-measurement-setup`). Each follows the same methodology principles as the general skills but applied to that domain. See `practices/marketing/seo-geo/README.md` for the routing logic ("start with audit," "start with schema," etc.).
 
 ---
 

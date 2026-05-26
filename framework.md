@@ -107,6 +107,18 @@ Three ways to start, in order of commitment:
 
 ---
 
+## Practices: methodology applied to a domain
+
+The four-layer model (think, build, review, reflect) is domain-agnostic. It works for any knowledge work.
+
+But some domains have enough repeatable structure that it's worth packaging skills *specifically* for them. That's what `practices/` is for. A practice takes the general methodology and applies it to a functional area, with skills shaped to that area's specific tasks.
+
+The first practice is `practices/marketing/seo-geo/` — SEO and GEO (Generative Engine Optimization) for small businesses. It includes a schema-fix skill, a comprehensive audit skill, and a measurement-setup skill, all following the same principles as the general skills (fail-fast at boot, propose-and-paste outputs, live DOM rather than markdown extraction, verification gates against current docs).
+
+The practice structure is a pattern that future domains can adopt: each practice has its own README, its own architecture doc, and its own skills directory. The general claude-consult skills (review, gap-check, etc.) work on the outputs that practice-specific skills produce.
+
+---
+
 ## A note on origin
 
-claude-consult is distilled from a practitioner's notes across many enterprise engagements, generalized for any knowledge worker doing consequential AI-assisted work. The specific examples that informed the patterns are not in this repo — they live in private. What's here is the methodology, the skills, and the patterns that transfer.
+claude-consult is distilled from a practitioner's notes across many engagements, generalized for any knowledge worker doing consequential AI-assisted work. The specific examples that informed the patterns are not in this repo — they live in private. What's here is the methodology, the skills, the patterns, and the first practice that applies them to a specific domain.

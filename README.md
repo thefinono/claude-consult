@@ -19,7 +19,10 @@ Four layers, thirteen skills:
 | **Reflect** | End of a session that produced consequential output | `gap-check` |
 | **Utility** | Throughout the work | `make-slides`, `markdown-to-word`, `project-hygiene`, `session-capture`, `find-skills` |
 
-Plus two patterns observed from practice: `dual-format-deliverables` and `shared-confirmation-log`.
+Plus a growing set of patterns and practices:
+
+- **`patterns/`** — small, generalizable methodology principles (e.g. `fail-fast-at-boot`, `dual-format-deliverables`, `shared-confirmation-log`).
+- **`practices/`** — domain-specific skill bundles that apply the methodology to a functional area. **`practices/marketing/seo-geo/`** is the first: marketing-manager-level SEO and GEO (Generative Engine Optimization) skills for small businesses. Future practices (other marketing sub-disciplines, sales, finance, etc.) will follow the same shape.
 
 ---
 
@@ -126,8 +129,11 @@ claude-consult/
 ├── LICENSE             # PolyForm Noncommercial 1.0.0
 ├── setup.sh            # optional global install (safe — never modifies your global CLAUDE.md)
 ├── framework.md        # the underlying methodology
-├── skills/             # the 13 skills
-└── patterns/           # observed patterns
+├── skills/             # the 13 general skills (think / review / reflect / utility)
+├── patterns/           # observed methodology patterns
+└── practices/          # domain-specific skill bundles, organized by function
+    └── marketing/      # marketing function
+        └── seo-geo/    # SEO + GEO skills for SMBs (first practice — sales/finance/etc. to follow)
 ```
 
 ---
