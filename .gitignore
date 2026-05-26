@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Working planning docs (kept in private mirror, not public history)
+_planning/
