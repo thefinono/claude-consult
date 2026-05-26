@@ -2,7 +2,7 @@
 name: smb-measurement-setup
 description: Walk a small business owner through setting up Google Analytics 4 and Google Search Console for their site, submit the sitemap, capture a baseline metrics snapshot, and equip the owner with a monthly review prompt library so they can read their own data. Use when an SMB owner needs to set up SEO measurement, doesn't know if they have analytics, or asks how to know if their SEO is working.
 tags: [smb, seo, measurement, gsc, ga4, foundation]
-status: draft
+status: stable
 source: distilled from SMB SEO/GEO engagement work + 2026 industry-validation research
 ---
 

@@ -2,7 +2,7 @@
 name: smb-seo-geo-audit
 description: Comprehensive SEO + GEO (AI-engine visibility) audit for a small business website. Inspects technical SEO health, AI-engine citation, off-site presence, measurement infrastructure, and competitive position. Produces a prioritized findings document with P0/P1/P2 severity, who-executes, and expected impact. Use when an SMB owner or fractional CMO wants to know what's wrong with their site, why no one's finding them, or whether the site is set up for AI search.
 tags: [smb, seo, geo, audit, ai-engines, measurement]
-status: draft
+status: stable
 source: distilled from SMB SEO/GEO engagement work + 2026 industry-validation research
 ---
 
@@ -18,7 +18,7 @@ This skill compresses what would be a 1-2 week senior-marketer discovery engagem
 
 ## What it does in one paragraph
 
-Given a small business website URL plus 2-3 named competitors and 3-5 target search queries, the skill: (0) **runs a preflight check** to confirm at least one AI-engine citation path is reachable and refuses to proceed if none is available; (1) fetches the homepage, sitemap.xml, robots.txt, and all sitemap-listed pages (or top N if large); (2) inspects each page via Chrome MCP for visual rendering, broken interactive elements, and JSON-LD schema; (3) calls `smb-schema-fix` for deep schema analysis; (4) audits robots.txt with explicit AI-crawler taxonomy (training-only vs retrieval bots — Claude-Web vs ClaudeBot, OAI-SearchBot vs GPTBot, PerplexityBot, plus non-compliant Bytespider); (5) checks Core Web Vitals via PageSpeed Insights; (6) analyzes internal linking (orphan pages, anchor patterns); (7) runs an indexing audit on sample pages via `site:` query; (8) detects measurement infrastructure (GA4 + Search Console) and reads GSC data when connected; (9) detects whether the business is local and, if so, audits Google Business Profile and runs a NAP-consistency check across top directories; (10) captures an off-site citation profile snapshot; (11) queries live AI engines for the target queries to establish a GEO baseline; (12) runs competitive SERP scans via web search; (13) performs a brand-entity disambiguation check; (14) optionally pulls Semrush or Ahrefs domain data; (15) outputs **ONE consolidated markdown audit document with eleven sections**: executive summary, confidence levels, P0/P1/P2 findings, GEO baseline, competitive landscape, what's working, what's still unverified, prioritized action plan (Quick Wins vs Strategic Investments), and flagged adjacent business observations.
+Given a small business website URL plus 2-3 named competitors and 3-5 target search queries, the skill: (0) **runs a preflight check** to confirm at least one AI-engine citation path is reachable and refuses to proceed if none is available; (1) fetches the homepage, sitemap.xml, robots.txt, and all sitemap-listed pages (or top N if large); (2) inspects each page via Chrome MCP for visual rendering, broken interactive elements, and JSON-LD schema; (3) calls `smb-schema-fix` for deep schema analysis; (4) audits robots.txt with explicit AI-crawler taxonomy (training-only vs retrieval bots — Claude-Web vs ClaudeBot, OAI-SearchBot vs GPTBot, PerplexityBot, plus any currently-known aggressive crawlers that don't respect robots.txt); (5) checks Core Web Vitals via PageSpeed Insights; (6) analyzes internal linking (orphan pages, anchor patterns); (7) runs an indexing audit on sample pages via `site:` query; (8) detects measurement infrastructure (GA4 + Search Console) and reads GSC data when connected; (9) detects whether the business is local and, if so, audits Google Business Profile and runs a NAP-consistency check across top directories; (10) captures an off-site citation profile snapshot; (11) queries live AI engines for the target queries to establish a GEO baseline; (12) runs competitive SERP scans via web search; (13) performs a brand-entity disambiguation check; (14) optionally pulls Semrush or Ahrefs domain data; (15) outputs **ONE consolidated markdown audit document with eleven sections**: executive summary, confidence levels, P0/P1/P2 findings, GEO baseline, competitive landscape, what's working, what's still unverified, prioritized action plan (Quick Wins vs Strategic Investments), and flagged adjacent business observations.
 
 ---
 
@@ -179,7 +179,7 @@ Sixteen disciplines.
 
 10. **Universal on-site baseline is non-negotiable.** Every audit MUST check the 2026 SEO baseline: HTTPS, mobile rendering, Core Web Vitals (LCP <2.5s, INP <200ms, CLS <0.1), title-tag and meta-description presence and uniqueness, internal-link structure (orphan pages), indexing health (sample pages return via `site:` query), XML sitemap submitted to GSC. These are table stakes across all business types. Source: Google Search Central + multiple 2026 industry checklists.
 
-11. **AI crawler audit uses explicit 2026 taxonomy.** The robots.txt audit MUST distinguish between **training-only crawlers** (ClaudeBot, GPTBot, CCBot, Meta-ExternalAgent) and **live-retrieval crawlers** (Claude-Web, OAI-SearchBot, ChatGPT-User, PerplexityBot, anthropic-ai). Blocking a retrieval crawler removes the brand from AI answers without protecting anything sensitive — a common, costly misconfiguration. Audit must also flag **Bytespider** specifically (non-compliant with robots.txt per public industry data) and recommend server-level blocking if bandwidth is a concern.
+11. **AI crawler audit uses explicit 2026 taxonomy.** The robots.txt audit MUST distinguish between **training-only crawlers** (ClaudeBot, GPTBot, CCBot, Meta-ExternalAgent) and **live-retrieval crawlers** (Claude-Web, OAI-SearchBot, ChatGPT-User, PerplexityBot, anthropic-ai). Blocking a retrieval crawler removes the brand from AI answers without protecting anything sensitive — a common, costly misconfiguration. Audit must also flag any currently-known aggressive crawlers that do not respect robots.txt (the specific bots in this category change as the landscape evolves — re-verify before each release) and recommend server-level blocking if bandwidth is a concern.
 
 12. **GBP is conditional and high-impact.** If the business is local (has a physical address customers visit OR meets customers in-person at their location), Google Business Profile audit is **P0 priority** (GBP signals account for roughly 25-32% of local ranking weight per recent industry studies, up materially since 2023). If the business is online-only-global, GBP is **N/A** and the audit must explicitly say so — and recommend REMOVING any auto-injected `LocalBusiness` schema. The audit must detect business type explicitly and not silently produce generic guidance.
 
@@ -232,7 +232,7 @@ Audit findings include CMS-specific fix instructions: "In Squarespace, do X" / "
 - Universal on-site baseline: HTTPS, mobile rendering, title-tag and meta-description audit, internal-link structure (orphan detection)
 - Core Web Vitals via PageSpeed Insights API (mobile + desktop)
 - Indexing audit on sample pages via `site:` query
-- robots.txt analysis with **explicit 2026 AI crawler taxonomy**: separates training-only from retrieval bots; flags Bytespider non-compliance separately
+- robots.txt analysis with **explicit 2026 AI crawler taxonomy**: separates training-only from retrieval bots; flags aggressive non-compliant crawlers separately
 - sitemap.xml analysis (placeholder content, hidden indexed pages, lastmod sanity); checks GSC for sitemap submission status
 - Schema inspection (delegated to `smb-schema-fix`)
 - Server-side rendering check for important content (flags JS-only critical content)
@@ -312,7 +312,7 @@ Audit findings include CMS-specific fix instructions: "In Squarespace, do X" / "
 
 9. **Business type detection.** The audit branches output based on detected business type. Detection signals: schema types present, GBP eligibility heuristic, CMS platform, owner-provided context. If detection is unreliable, fall back to asking the user explicitly.
 
-10. **Bytespider response.** The audit flags Bytespider non-compliance but the recommended response (server-level block) is outside most SMB owners' technical capability. Provide host-specific instructions where possible; honest note that for most SMBs the answer is "live with the bandwidth cost."
+10. **Non-compliant-crawler response.** When the audit flags a crawler that ignores robots.txt, the recommended response (server-level block) is outside most SMB owners' technical capability. Provide host-specific instructions where possible; honest note that for most SMBs the answer is "live with the bandwidth cost."
 
 ---
 

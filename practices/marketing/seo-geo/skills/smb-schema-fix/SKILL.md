@@ -2,7 +2,7 @@
 name: smb-schema-fix
 description: Inspect the JSON-LD structured data on a small business website, diagnose what's wrong (with explicit reasons), and output corrected JSON-LD ready to paste into the site's CMS code-injection field. Use when a small business owner asks to fix their schema, check their structured data, or wants to know how AI engines and Google see their site.
 tags: [smb, seo, geo, schema, json-ld]
-status: draft
+status: stable
 source: distilled from SMB SEO/GEO engagement work + 2026 industry-validation research
 ---
 
@@ -177,9 +177,8 @@ For unsupported CMSes the skill outputs the schema with generic "paste this into
 ## Open questions
 
 1. **Output format.** Markdown report (current default) vs. interactive walkthrough where the skill asks questions and makes one recommendation at a time. Both have merits; markdown report is the v0.1 default.
-2. **Schema.org docs caching.** Should the skill cache the Schema.org pages it fetches, or always re-fetch? Spec changes between sessions are rare but possible. Always-fetch is safer but slower.
-3. **Coexistence with auto-injected schema.** If a custom `Organization` block coexists with the CMS's auto-injected `LocalBusiness`, which does Google honor? Empirically uncertain — verify in the Rich Results Test for each engagement.
-4. **Liability and disclaimer.** When the skill recommends a schema change, what's the standing disclaimer? "We can't guarantee Google will pick this up, and incorrect schema can trigger a manual action." This should appear in the output where the owner sees it.
+2. **Coexistence with auto-injected schema.** If a custom `Organization` block coexists with the CMS's auto-injected `LocalBusiness`, which does Google honor? Empirically uncertain — verify in the Rich Results Test for each engagement.
+3. **Liability and disclaimer.** When the skill recommends a schema change, what's the standing disclaimer? "We can't guarantee Google will pick this up, and incorrect schema can trigger a manual action." This should appear in the output where the owner sees it.
 
 ---
 
